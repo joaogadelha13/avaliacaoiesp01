@@ -11,6 +11,15 @@ public class Universidade {
     private ArrayList<Curso> cursosAtivos;
     private ArrayList<Curso> cursosInativos;
 
+    public Universidade(int codigo, String universidade, String diretor, ArrayList<Curso> cursos, ArrayList<Curso> cursosAtivos, ArrayList<Curso> cursosInativos) {
+        this.codigo = codigo;
+        this.universidade = universidade;
+        this.diretor = diretor;
+        this.cursos = cursos;
+        this.cursosAtivos = cursosAtivos;
+        this.cursosInativos = cursosInativos;
+    }
+
     public void adicionarCurso(Curso curso){
         this.cursos.add(curso);
 

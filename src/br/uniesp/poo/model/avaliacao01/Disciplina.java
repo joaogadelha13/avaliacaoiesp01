@@ -1,7 +1,6 @@
 package br.uniesp.poo.model.avaliacao01;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Disciplina {
 
@@ -11,6 +10,21 @@ public class Disciplina {
     private int trocasProfessor;
     private ArrayList<Aluno> alunoAtivos;
     private ArrayList<Aluno> alunoInativos;
+
+
+    public Disciplina(String nome, Professor professor, ArrayList<Aluno> alunos, int trocasProfessor, ArrayList<Aluno> alunoAtivos, ArrayList<Aluno> alunoInativos) {
+        this.nome = nome;
+        this.professor = professor;
+        this.alunos = alunos;
+        this.trocasProfessor = trocasProfessor;
+        this.alunoAtivos = alunoAtivos;
+        this.alunoInativos = alunoInativos;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -21,13 +35,14 @@ public class Disciplina {
 
 
 
-    //Só será permitido trocar o professor 2 vezes.
-    public void trocar_Professor(Professor professor){
 
+    public void trocarProfessor(Professor professor){
+        this.trocasProfessor = trocasProfessor +1;
         if (this.trocasProfessor <=2){
             this.professor = professor;
-            this.trocasProfessor = trocasProfessor +1;
+
         }else{
+            System.out.println("Maximo de troca excedidos");
 
         }
 
@@ -35,7 +50,7 @@ public class Disciplina {
 
 
 
-    //Só são permitidos no máximo 50 Alunos ativos.
+
     public void adicionarAluno(Aluno aluno) {
             this.alunos.add(aluno);
         }
