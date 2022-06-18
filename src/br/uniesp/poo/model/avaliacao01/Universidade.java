@@ -7,28 +7,42 @@ public class Universidade {
     private int codigo;
     private String universidade;
     private String diretor;
-
+    private ArrayList<Curso> cursos;
+    private ArrayList<Curso> cursosAtivos;
+    private ArrayList<Curso> cursosInativos;
 
     public void adicionarCurso(Curso curso){
-        // Implemente o código.
+        this.cursos.add(curso);
+
     }
 
     public void removerCurso(Curso curso){
-        // Implemente o código
+        this.cursos.remove(curso);
     }
 
-    public void listarCursos(){
+    public ArrayList<Curso> getCursos(){
+    return cursos;
+
 
     }
 
     public ArrayList<Curso> getCursosAtivos(){
-        //implemente os códigos
-        return null;
+
+        return cursosAtivos;
     }
 
     public ArrayList<Curso> getCursosInativos(){
-        //implemente os códigos
-        return null;
+        return cursosInativos;
+
+    }
+
+    public void ativarCurso(Curso curso){
+        this.cursosAtivos.add(curso);
+
+    }
+    public void inativarCurso(Curso curso){
+        this.cursosInativos.add(curso);
+        this.cursosAtivos.remove(curso);
     }
 
 }
